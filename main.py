@@ -253,8 +253,8 @@ def draw(c, S):
     c.circle(X(300), X(822), X(35), YELLOW)                  # chick head
     c.ellipse(X(262), X(882), X(20), X(30), YELLOW_DARK, angle=-0.4)  # wing
     c.polygon([(X(330), X(812)), (X(330), X(828)), (X(352), X(820))], ORANGE)  # beak
-    c.circle(X(312), X(810), X(5), DARK)                     # eye
-    c.circle(X(314), X(808), X(2), WHITE)                    # eye shine
+    c.circle(X(312), X(810), X(6), DARK)                     # eye (slightly bigger: reads at thumbnail size)
+    c.circle(X(314), X(808), X(3), WHITE)                    # eye shine
     c.soft_circle(X(292), X(830), X(12), BLUSH, 0.5)         # cheek blush
     c.stroke([(X(292), X(790)), (X(284), X(772))], X(5), YELLOW_DARK)  # head tuft
     c.stroke([(X(300), X(788)), (X(300), X(770))], X(5), YELLOW_DARK)
@@ -336,6 +336,8 @@ def draw(c, S):
         a = 2 * math.pi * k / 5 - math.pi / 2
         c.circle(fx + X(20) * math.cos(a), fy + X(20) * math.sin(a), X(15), PINK)
     c.circle(fx, fy, X(13), (255, 205, 92))
+    # one small sparkle beside the flower to balance the upper-right corner
+    c.sparkle(fx + X(54), fy - X(48), X(11), WHITE)
 
 
 def downsample(src, w, h, ss):
